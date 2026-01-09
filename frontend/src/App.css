@@ -1,0 +1,193 @@
+/* --- Global Reset & Dark Theme --- */
+body {
+  background-color: #0f172a; /* Deep Navy/Black Background */
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 500px; /* Mobile-app style width like your screenshot */
+  padding: 20px;
+}
+
+/* --- The Main Card Container --- */
+.dashboard-container {
+  background: #1e293b; /* Slightly lighter dark blue */
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
+  border: 1px solid #334155;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header --- */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa); /* Blue-Purple Gradient Text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* --- Input Fields (Dark & Sleek) --- */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Adds icons before labels (using emojis for simplicity) */
+label span::before {
+  margin-right: 8px;
+}
+
+input {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-top: 6px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* --- The "Magic Button" --- */
+.optimize-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.optimize-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.optimize-btn:active {
+  transform: scale(0.98);
+}
+
+.optimize-btn:disabled {
+  background: #475569;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* --- Results Section (The Pop-up Card) --- */
+.result-section {
+  margin-top: 30px;
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #334155;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #1e293b;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.val {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* The Green Recommendation Text */
+.val-large {
+  color: #4ade80; /* Bright Neon Green */
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.2);
+}
+
+/* Badges */
+.badge {
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 15px;
+  display: block;
+}
+
+.badge.success {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.badge.neutral {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+}
+
+.error-msg {
+  color: #f87171;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
